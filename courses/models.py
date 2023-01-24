@@ -33,7 +33,7 @@ class Module(models.Model):
     description = models.TextField(blank=True)
     order = OrderField(blank=True , for_fields=['course'])
     def __str__(self):
-        return self.title
+        return f'{self.order}. {self.title}'
 
 class Content(models.Model):
     module = models.ForeignKey(Module , related_name='contents' , on_delete=models.CASCADE)
